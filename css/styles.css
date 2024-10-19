@@ -91,6 +91,22 @@ img {
   letter-spacing: 0.02em;
   color: #2e2f42;
   padding: 24px 0;
+  position: relative;
+  transition-property: background-color, color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.active::after {
+  content: "";
+  width: 100%;
+  display: block;
+  height: 4px;
+  background-color: #404bbf;
+  border-radius: 3px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
 }
 
 .header-menu-link:hover,
@@ -105,6 +121,9 @@ img {
 }
 .header-contacts {
   font-style: normal;
+  transition-property: background-color, color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .header-contacts-link {
   font-size: 16px;
@@ -119,11 +138,21 @@ img {
 }
 .solutions {
   background: #2e2f42;
+  background-image: linear-gradient(
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url(../images/people-office.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   padding: 188px 0;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .solutions-subtitle {
-  background-color: #2e2f42;
+  background-color: transparent;
   font-weight: 700;
   font-size: 56px;
   line-height: 1.07;
@@ -154,6 +183,9 @@ img {
   border: none;
   display: block;
   margin: 0 auto;
+  transition-property: background-color, color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .features {
@@ -176,6 +208,22 @@ img {
 .features-list {
   display: flex;
   gap: 24px;
+}
+
+.features-list-item-container {
+  display: flex;
+  align-items: center;
+  background-color: #f4f4fd;
+  border: 1px solid #8e8f99;
+  border-radius: 4px;
+  width: 264px;
+  height: 112px;
+  margin-bottom: 8px;
+}
+
+.features-list-item {
+  display: block;
+  margin: 0 auto;
 }
 
 .features-subtitle {
@@ -212,6 +260,8 @@ img {
   background-color: #ffffff;
   border-radius: 0px 0px 4px 4px;
   width: calc((100% - 72px) / 4);
+  box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
 }
 
 .team-title {
@@ -238,6 +288,40 @@ img {
 
 .team-container {
   padding: 32px 0;
+}
+
+.icon-tem-link {
+  width: 100%;
+  height: 100%;
+  background-color: #4d5ae5;
+  border-radius: 50%;
+  fill: #4d5ae5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+}
+
+.icon-tem-link:hover {
+  background-color: #404bbf;
+}
+
+.team-icon-list {
+  display: flex;
+  gap: 24px;
+  padding-right: 0;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.team-icon-item {
+  width: 40px;
+  height: 40px;
+}
+
+.team-list-item {
+  fill: #fff;
 }
 
 .team-text {
@@ -268,6 +352,12 @@ img {
 
 .portfolio-item {
   width: calc((100% - 48px) / 3);
+  box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
+}
+
+.portfolio-item:hover .portfolio-cover-text {
+  transform: translateY(0);
 }
 
 .portfolio-title {
@@ -280,6 +370,30 @@ img {
   color: #2e2f42;
   margin-bottom: 72px;
 }
+
+.portfolio-cover-text-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-cover-text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  position: absolute;
+  background-color: #4d5ae5;
+  color: #f4f4fd;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 40px 32px;
+  transform: translateY(100%);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .portfolio-subtitle {
   font-weight: 500;
   font-size: 20px;
@@ -315,4 +429,61 @@ img {
   letter-spacing: 0.02em;
   color: #f4f4fd;
   max-width: 264px;
+}
+
+.footer-icon-text {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #fff;
+}
+
+.footer-box {
+  display: flex;
+  padding: 32px 0;
+}
+
+.logo-box {
+  display: block;
+}
+
+.icon-box {
+  margin-left: 120px;
+  display: inline;
+}
+
+.footer-icon-text {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.footer-icon-item {
+  width: 40px;
+  height: 40px;
+}
+
+.footer-icon-list {
+  display: flex;
+  gap: 16px;
+}
+
+.icon-footer-link {
+  width: 100%;
+  height: 100%;
+  background-color: #4d5ae5;
+  border-radius: 50%;
+  fill: #4d5ae5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+}
+
+.icon-footer-link:hover {
+  background-color: #31d0aa;
 }
